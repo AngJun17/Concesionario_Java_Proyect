@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="533.0" prefWidth="1013.0" style="-fx-background-color: #13300b;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atlantafxtemplate.MainController">
+
+   <children>
+      <ImageView fitHeight="547.0" fitWidth="937.0" layoutX="-384.0" opacity="0.24" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Gemini_Generated_Image_yxo5duyxo5duyxo5.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="606.0" layoutY="81.0" prefHeight="397.0" prefWidth="359.0" style="-fx-background-color: #4a6c40;">
+         <children>
+            <TextField fx:id="usernameTextField" layoutX="50.0" layoutY="126.0" prefHeight="32.0" prefWidth="260.0" promptText="Username" styleClass="text-field" />
+            <PasswordField fx:id="passwordTextField" layoutX="51.0" layoutY="210.0" prefHeight="32.0" prefWidth="260.0" promptText="Password" styleClass="password-field" />
+            <Button fx:id="logInButton" layoutX="52.0" layoutY="294.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="260.0" styleClass="jfx-button" text="Log In" textFill="WHITE" />
+            <Label layoutX="147.0" layoutY="31.0" text="Log In" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pswVisibleTextField" layoutX="52.0" layoutY="210.0" prefHeight="32.0" prefWidth="260.0" promptText="Password" styleClass="text-field" visible="false" />
+            <ImageView fx:id="hideShowPswrdImage" fitHeight="50.0" fitWidth="64.0" layoutX="271.0" layoutY="201.0" onMouseClicked="#TooglePasswordView" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ojito.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="54.0" layoutY="145.0" opacity="0.91" text="Welcome to Apex Motors" textFill="WHITE">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUpButton" layoutX="54.0" layoutY="322.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="233.0" styleClass="jfx-button" text="Sign Up" textFill="WHITE" />
+      <Label layoutX="54.0" layoutY="209.0" opacity="0.91" text="At Apex Motors, we don’t just offer cars, we offer experiences. &#10;Explore our vehicles, discover exclusive deals, &#10;and start your journey with us today.&#10;&#10;Drive, discover, and let your dreams accelerate.&#10;" textFill="#f8f8f8" />
+      <Label fx:id="lblClose" layoutX="985.0" layoutY="6.0" onMouseClicked="#CloseLogIn" text="X" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
