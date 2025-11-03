@@ -17,14 +17,14 @@
             <Image url="@Images/Gemini_Generated_Image_yxo5duyxo5duyxo5.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="AnchorPaneSignUp" layoutX="606.0" layoutY="81.0" prefHeight="397.0" prefWidth="359.0" style="-fx-background-color: #4a6c40;" visible="false">
+      <AnchorPane fx:id="AnchorPaneSignUp" layoutX="606.0" layoutY="81.0" prefHeight="397.0" prefWidth="359.0" style="-fx-background-color: #4a6c40;">
          <children>
             <Label layoutX="140.0" layoutY="32.0" text="Sign Up" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
             </Label>
-            <TextField layoutX="50.0" layoutY="104.0" prefHeight="32.0" prefWidth="260.0" promptText="Username" styleClass="text-field" />
+            <TextField fx:id="newusermaneTxtField" layoutX="50.0" layoutY="104.0" prefHeight="32.0" prefWidth="260.0" promptText="Username" styleClass="text-field" />
             <Button layoutX="50.0" layoutY="321.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="260.0" styleClass="jfx-button" text="Sign Up" />
             <PasswordField fx:id="newpassword" layoutX="50.0" layoutY="173.0" prefHeight="32.0" prefWidth="233.0" promptText="Password" />
             <PasswordField fx:id="confirmPassword" layoutX="50.0" layoutY="245.0" prefHeight="32.0" prefWidth="233.0" promptText="Confirm Password" />
@@ -47,7 +47,7 @@
             <TextField fx:id="confirmPasswordTextField" layoutX="50.0" layoutY="245.0" prefHeight="32.0" prefWidth="233.0" promptText="Confirm Password" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="AnchorPaneLogIn" layoutX="606.0" layoutY="81.0" prefHeight="397.0" prefWidth="359.0" style="-fx-background-color: #4a6c40;">
+      <AnchorPane fx:id="AnchorPaneLogIn" layoutX="606.0" layoutY="81.0" prefHeight="397.0" prefWidth="359.0" style="-fx-background-color: #4a6c40;" visible="false">
          <children>
             <TextField fx:id="usernameTextField" layoutX="50.0" layoutY="126.0" prefHeight="32.0" prefWidth="260.0" promptText="Username" styleClass="text-field" />
             <PasswordField fx:id="passwordTextField" layoutX="51.0" layoutY="210.0" prefHeight="32.0" prefWidth="233.0" promptText="Password" styleClass="password-field" />

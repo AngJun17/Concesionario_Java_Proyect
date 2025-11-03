@@ -46,6 +46,9 @@ public class MainController {
     private PasswordField newpassword;
 
     @FXML
+    private TextField newusermaneTxtField;
+
+    @FXML
     private PasswordField passwordTextField;
 
     @FXML
@@ -120,10 +123,37 @@ public class MainController {
     }
 
     @FXML
+    void inicioTextFields() {
+        //Sincronizar Campos}
+        pswVisibleTextField.setVisible(false);
+        passwordTextField.setVisible(true);
+        hideShowPswrdImage.setOpacity(0.5);
+
+        newPasswordTextField.setVisible(false);
+        newpassword.setVisible(true);
+        hideShowPswrdImage2.setOpacity(0.5);
+
+        confirmPasswordTextField.setVisible(false);
+        confirmPassword.setVisible(true);
+        hideShowPswrdImage3.setOpacity(0.5);
+    }
+
+    @FXML
     void returnLogIn(MouseEvent event) {
         AnchorPaneSignUp.setVisible(false);
         AnchorPaneLogIn.setVisible(true);
         signUpButton.setVisible(true);
+
+        newpassword.setText("");
+        newPasswordTextField.setText("");
+        confirmPassword.setText("");
+        confirmPasswordTextField.setText("");
+        newusermaneTxtField.setText("");
+
+        passwordTextField.setText("");
+        pswVisibleTextField.setText("");
+        usernameTextField.setText("");
+        inicioTextFields();
     }
 
     @FXML
@@ -138,18 +168,11 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        //Sincronizar Campos}
+        inicioTextFields();
         pswVisibleTextField.textProperty().bindBidirectional(passwordTextField.textProperty());
-        pswVisibleTextField.setVisible(false);
-        hideShowPswrdImage.setOpacity(0.5);
-
         newPasswordTextField.textProperty().bindBidirectional(newpassword.textProperty());
-        newPasswordTextField.setVisible(false);
-        hideShowPswrdImage2.setOpacity(0.5);
-
         confirmPasswordTextField.textProperty().bindBidirectional(confirmPassword.textProperty());
-        confirmPasswordTextField.setVisible(false);
-        hideShowPswrdImage3.setOpacity(0.5);
+
 
         AnchorPaneSignUp.setVisible(false);
         AnchorPaneLogIn.setVisible(true);
