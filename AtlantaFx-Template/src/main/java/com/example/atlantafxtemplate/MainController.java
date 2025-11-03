@@ -11,8 +11,27 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class MainController {
+
+    @FXML
+    private AnchorPane AnchorPaneLogIn;
+
+    @FXML
+    private AnchorPane AnchorPaneSignUp;
+
+    @FXML
+    private PasswordField confirmPassword;
+
+    @FXML
+    private TextField confirmPasswordTextField;
+
     @FXML
     private ImageView hideShowPswrdImage;
+
+    @FXML
+    private ImageView hideShowPswrdImage2;
+
+    @FXML
+    private ImageView hideShowPswrdImage3;
 
     @FXML
     private Label lblClose;
@@ -21,10 +40,19 @@ public class MainController {
     private Button logInButton;
 
     @FXML
+    private TextField newPasswordTextField;
+
+    @FXML
+    private PasswordField newpassword;
+
+    @FXML
     private PasswordField passwordTextField;
 
     @FXML
     private TextField pswVisibleTextField;
+
+    @FXML
+    private Label returnLogInLBL;
 
     @FXML
     private AnchorPane rootPane;
@@ -34,9 +62,6 @@ public class MainController {
 
     @FXML
     private TextField usernameTextField;
-
-    private double xOffset = 0;
-    private double yOffset = 0;
 
     @FXML
     void CloseLogIn(MouseEvent event) {
@@ -61,11 +86,74 @@ public class MainController {
     }
 
     @FXML
+    void TooglePasswordView2(MouseEvent event) {
+        if (newPasswordTextField.isVisible()) {
+            //ocultar
+            newPasswordTextField.setVisible(false);
+            newpassword.setVisible(true);
+            hideShowPswrdImage2.setOpacity(0.5);
+        } else {
+            //mostrar
+            newPasswordTextField.setVisible(true);
+            newpassword.setVisible(false);
+            hideShowPswrdImage2.setOpacity(1);
+            newPasswordTextField.requestFocus();
+            newPasswordTextField.positionCaret(newPasswordTextField.getText().length());
+        }
+    }
+
+    @FXML
+    void TooglePasswordView3(MouseEvent event) {
+        if (confirmPasswordTextField.isVisible()) {
+            //ocultar
+            confirmPasswordTextField.setVisible(false);
+            confirmPassword.setVisible(true);
+            hideShowPswrdImage3.setOpacity(0.5);
+        } else {
+            //mostrar
+            confirmPasswordTextField.setVisible(true);
+            confirmPassword.setVisible(false);
+            hideShowPswrdImage3.setOpacity(1);
+            confirmPasswordTextField.requestFocus();
+            confirmPasswordTextField.positionCaret(newPasswordTextField.getText().length());
+        }
+    }
+
+    @FXML
+    void returnLogIn(MouseEvent event) {
+        AnchorPaneSignUp.setVisible(false);
+        AnchorPaneLogIn.setVisible(true);
+        signUpButton.setVisible(true);
+    }
+
+    @FXML
+    void signUpBtt(MouseEvent event) {
+        AnchorPaneSignUp.setVisible(true);
+        AnchorPaneLogIn.setVisible(false);
+        signUpButton.setVisible(false);
+    }
+
+    private double xOffset = 0;
+    private double yOffset = 0;
+
+    @FXML
     public void initialize() {
         //Sincronizar Campos}
         pswVisibleTextField.textProperty().bindBidirectional(passwordTextField.textProperty());
         pswVisibleTextField.setVisible(false);
         hideShowPswrdImage.setOpacity(0.5);
+
+        newPasswordTextField.textProperty().bindBidirectional(newpassword.textProperty());
+        newPasswordTextField.setVisible(false);
+        hideShowPswrdImage2.setOpacity(0.5);
+
+        confirmPasswordTextField.textProperty().bindBidirectional(confirmPassword.textProperty());
+        confirmPasswordTextField.setVisible(false);
+        hideShowPswrdImage3.setOpacity(0.5);
+
+        AnchorPaneSignUp.setVisible(false);
+        AnchorPaneLogIn.setVisible(true);
+        signUpButton.setVisible(true);
 
         // Arratrar la ventana
         rootPane.setOnMousePressed(event -> {

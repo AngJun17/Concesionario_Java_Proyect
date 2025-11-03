@@ -17,17 +17,47 @@
             <Image url="@Images/Gemini_Generated_Image_yxo5duyxo5duyxo5.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="606.0" layoutY="81.0" prefHeight="397.0" prefWidth="359.0" style="-fx-background-color: #4a6c40;">
+      <AnchorPane fx:id="AnchorPaneSignUp" layoutX="606.0" layoutY="81.0" prefHeight="397.0" prefWidth="359.0" style="-fx-background-color: #4a6c40;" visible="false">
+         <children>
+            <Label layoutX="140.0" layoutY="32.0" text="Sign Up" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <TextField layoutX="50.0" layoutY="104.0" prefHeight="32.0" prefWidth="260.0" promptText="Username" styleClass="text-field" />
+            <Button layoutX="50.0" layoutY="321.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="260.0" styleClass="jfx-button" text="Sign Up" />
+            <PasswordField fx:id="newpassword" layoutX="50.0" layoutY="173.0" prefHeight="32.0" prefWidth="233.0" promptText="Password" />
+            <PasswordField fx:id="confirmPassword" layoutX="50.0" layoutY="245.0" prefHeight="32.0" prefWidth="233.0" promptText="Confirm Password" />
+            <Label fx:id="returnLogInLBL" layoutX="14.0" onMouseClicked="#returnLogIn" prefHeight="50.0" prefWidth="35.0" text="←" textFill="WHITE">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="hideShowPswrdImage2" fitHeight="50.0" fitWidth="64.0" layoutX="272.0" layoutY="164.0" onMouseClicked="#TooglePasswordView2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ojito.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="hideShowPswrdImage3" fitHeight="50.0" fitWidth="64.0" layoutX="274.0" layoutY="234.0" onMouseClicked="#TooglePasswordView3" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ojito.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="newPasswordTextField" layoutX="50.0" layoutY="173.0" prefHeight="32.0" prefWidth="233.0" promptText="Password" />
+            <TextField fx:id="confirmPasswordTextField" layoutX="50.0" layoutY="245.0" prefHeight="32.0" prefWidth="233.0" promptText="Confirm Password" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AnchorPaneLogIn" layoutX="606.0" layoutY="81.0" prefHeight="397.0" prefWidth="359.0" style="-fx-background-color: #4a6c40;">
          <children>
             <TextField fx:id="usernameTextField" layoutX="50.0" layoutY="126.0" prefHeight="32.0" prefWidth="260.0" promptText="Username" styleClass="text-field" />
-            <PasswordField fx:id="passwordTextField" layoutX="51.0" layoutY="210.0" prefHeight="32.0" prefWidth="260.0" promptText="Password" styleClass="password-field" />
+            <PasswordField fx:id="passwordTextField" layoutX="51.0" layoutY="210.0" prefHeight="32.0" prefWidth="233.0" promptText="Password" styleClass="password-field" />
             <Button fx:id="logInButton" layoutX="52.0" layoutY="294.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="260.0" styleClass="jfx-button" text="Log In" textFill="WHITE" />
             <Label layoutX="147.0" layoutY="31.0" text="Log In" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="pswVisibleTextField" layoutX="52.0" layoutY="210.0" prefHeight="32.0" prefWidth="260.0" promptText="Password" styleClass="text-field" visible="false" />
+            <TextField fx:id="pswVisibleTextField" layoutX="52.0" layoutY="210.0" prefHeight="32.0" prefWidth="233.0" promptText="Password" styleClass="text-field" visible="false" />
             <ImageView fx:id="hideShowPswrdImage" fitHeight="50.0" fitWidth="64.0" layoutX="271.0" layoutY="201.0" onMouseClicked="#TooglePasswordView" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/ojito.png" />
@@ -40,7 +70,7 @@
             <Font size="39.0" />
          </font>
       </Label>
-      <Button fx:id="signUpButton" layoutX="54.0" layoutY="322.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="233.0" styleClass="jfx-button" text="Sign Up" textFill="WHITE" />
+      <Button fx:id="signUpButton" layoutX="54.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#signUpBtt" prefHeight="40.0" prefWidth="233.0" styleClass="jfx-button" text="Sign Up" textFill="WHITE" />
       <Label layoutX="54.0" layoutY="209.0" opacity="0.91" text="At Apex Motors, we don’t just offer cars, we offer experiences. &#10;Explore our vehicles, discover exclusive deals, &#10;and start your journey with us today.&#10;&#10;Drive, discover, and let your dreams accelerate.&#10;" textFill="#f8f8f8" />
       <Label fx:id="lblClose" layoutX="985.0" layoutY="6.0" onMouseClicked="#CloseLogIn" text="X" textFill="WHITE">
          <font>
