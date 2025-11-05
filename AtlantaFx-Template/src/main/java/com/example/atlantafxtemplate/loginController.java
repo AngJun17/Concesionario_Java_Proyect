@@ -10,7 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class MainController {
+public class loginController {
 
     @FXML
     private AnchorPane AnchorPaneLogIn;

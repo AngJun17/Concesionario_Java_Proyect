@@ -23,8 +23,8 @@
     -fx-prompt-text-fill: #9fe37b;
 }
 
-/* ====== JFXBUTTON SIMULADO ====== */
-.jfx-button {
+/* ====== JFXBUTTON ====== */
+.jfx-button-green {
     -fx-background-color: #90b576;/*transparent;*/
     -fx-text-fill: #ffffff;
     -fx-font-weight: 600;
@@ -36,13 +36,13 @@
 }
 
 /* Hover: elevación y fondo suave */
-.jfx-button:hover {
+.jfx-button-green:hover {
     -fx-background-color: #b1db93;
     -fx-effect: dropshadow(gaussian, rgba(63,81,181,0.25), 8, 0.3, 0, 2);
 }
 
 /* Click: animación suave tipo ripple */
-.jfx-button:pressed {
+.jfx-button-green:pressed {
     -fx-background-color: rgba(63,81,181,0.2);
     -fx-translate-y: 1;
 }
@@ -52,5 +52,29 @@
 .jfx-button:disabled, .jfx-button-raised:disabled {
     -fx-opacity: 0.6;
     -fx-cursor: default;
+}
+
+/* ====== BOTON TRANSPARENTE ====== */
+.jfx-button-transparent {
+    -fx-background-color: transparent;
+    -fx-text-fill:  #ffffff;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+    -fx-effect: none;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* Hover: elevación y fondo suave */
+.jfx-button-transparent :hover {
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(63,81,181,0.25), 8, 0.3, 0, 2);
+}
+
+/* Click: animación suave tipo ripple */
+.jfx-button-transparent :pressed {
+    -fx-background-color: rgba(63,81,181,0.2);
+    -fx-translate-y: 1;
 }
 
