@@ -1,5 +1,6 @@
 package com.example.atlantafxtemplate;
 
+import javafx.fxml.Initializable;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,10 +11,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class loginController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class loginController implements Initializable {
 
     @FXML
     private AnchorPane AnchorPaneLogIn;
+
+    @FXML
+    private AnchorPane LoginPane;
 
     @FXML
     private AnchorPane AnchorPaneSignUp;
@@ -163,11 +170,17 @@ public class loginController {
         signUpButton.setVisible(false);
     }
 
+    @FXML
+    void LogInPress(MouseEvent event) {
+        sceneChanger.cambiarEscena("compraVehiculos-view.fxml", event);
+    }
+
     private double xOffset = 0;
     private double yOffset = 0;
 
     @FXML
-    public void initialize() {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         inicioTextFields();
         pswVisibleTextField.textProperty().bindBidirectional(passwordTextField.textProperty());
         newPasswordTextField.textProperty().bindBidirectional(newpassword.textProperty());
@@ -179,15 +192,7 @@ public class loginController {
         signUpButton.setVisible(true);
 
         // Arratrar la ventana
-        rootPane.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
+        sceneChanger.makeDraggable(LoginPane);
 
-        rootPane.setOnMouseDragged(event -> {
-            Stage stage = (Stage) rootPane.getScene().getWindow();
-            stage.setX(event.getScreenX() - xOffset);
-            stage.setY(event.getScreenY() - yOffset);
-        });
     }
 }

@@ -10,10 +10,10 @@ import javafx.scene.layout.AnchorPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class comprarVehiculoController implements Initializable {
+public class cotizadorController implements Initializable {
 
     @FXML
-    private AnchorPane comprarMainPane;
+    private AnchorPane cotizadorMainPane;
 
     @FXML
     private ImageView carritoImage;
@@ -65,7 +65,7 @@ public class comprarVehiculoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        sceneChanger.makeDraggable(comprarMainPane);
+        sceneChanger.makeDraggable(cotizadorMainPane);
     }
 
 }

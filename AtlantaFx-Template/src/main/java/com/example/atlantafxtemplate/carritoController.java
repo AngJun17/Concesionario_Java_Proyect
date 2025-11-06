@@ -2,7 +2,9 @@ package com.example.atlantafxtemplate;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -10,10 +12,9 @@ import javafx.scene.layout.AnchorPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class comprarVehiculoController implements Initializable {
-
+public class carritoController implements Initializable {
     @FXML
-    private AnchorPane comprarMainPane;
+    private AnchorPane carritoMainPane;
 
     @FXML
     private ImageView carritoImage;
@@ -65,7 +66,6 @@ public class comprarVehiculoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        sceneChanger.makeDraggable(comprarMainPane);
+        sceneChanger.makeDraggable(carritoMainPane);
     }
-
 }

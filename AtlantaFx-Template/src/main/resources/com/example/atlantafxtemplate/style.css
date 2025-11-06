@@ -78,3 +78,54 @@
     -fx-translate-y: 1;
 }
 
+/* ====== ALERT DISEÑO ====== */
+
+/* Fondo general del diálogo */
+.jfoenix-alert,
+.jfoenix-alert > *.header-panel,
+.jfoenix-alert > *.content,
+.jfoenix-alert > *.button-bar {
+    -fx-background-color:  #13300b;
+}
+
+/* Sombras suaves tipo material */
+.jfoenix-alert {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 4);
+    -fx-padding: 10px;
+}
+
+/* Título (header) */
+.jfoenix-alert > *.header-panel .label {
+    -fx-text-fill:  #b1db93;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Texto del contenido */
+.jfoenix-alert .content.label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+}
+
+/* Botones */
+.jfoenix-alert .button {
+    -fx-background-color: transparent;
+    -fx-text-fill:  #71a164;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 6px 12px;
+}
+
+/* Efecto hover */
+.jfoenix-alert .button:hover {
+    -fx-background-color: #b1db93;
+}
+
+/* Efecto de enfoque (click presionado) */
+.jfoenix-alert .button:pressed {
+    -fx-background-color: rgba(63,81,181,0.2);
+}
+
