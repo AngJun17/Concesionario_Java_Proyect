@@ -6,5 +6,8 @@ module com.example.atlantaapp {
     requires com.google.gson;
 
     opens com.example.atlantafxtemplate to javafx.fxml;
+    opens com.example.atlantafxtemplate.Modelo to com.google.gson;
+
     exports com.example.atlantafxtemplate;
+
 }

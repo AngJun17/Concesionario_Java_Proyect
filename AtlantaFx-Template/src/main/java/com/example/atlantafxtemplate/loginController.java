@@ -178,19 +178,22 @@ public class loginController implements Initializable {
         sceneChanger.makeDraggable(LoginPane);
 
     }
+
     @FXML private Label warningLbl;
 
-
-
     private final LoginManager loginManager = new LoginManager();
-    @FXML
-    private void LogInPress() {
-        String user = usernameTextField.getText().trim();
-        String pass = passwordTextField.getText().trim();
 
-        if (loginManager.validar(user, pass)) {
+    @FXML
+    private void LogInPress(MouseEvent event) {
+
+        String user = usernameTextField.getText().trim();
+        String pass = pswVisibleTextField.getText().trim();
+        boolean valido = loginManager.validar(user, pass);
+        System.out.println(valido);
+        if (valido == true) {
             try {
-                sceneChanger.cambiarEscena("compraVehiculos-view.fxml", null);
+                System.out.println("valido");
+                sceneChanger.cambiarEscena("compraVehiculos-view.fxml", event);
 
             }
             catch (Exception ex) {

@@ -18,19 +18,33 @@ public class LoginManager {
         cargarUsuarios();
     }
 
-    private void cargarUsuarios(){
+    public void cargarUsuarios() {
+        try {
+            var input = getClass().getResourceAsStream("/data/usuarios.json");
+            if (input == null) {
+                System.err.println("⚠️ No se encontró el archivo usuarios.json");
+                return;
+            }
 
-        try(Reader reader = new InputStreamReader(getClass().getResourceAsStream("/data/usuarios.json"))) {;
-            Gson gson = new Gson();
-            Type listType = new TypeToken<List<Usuario>>(){}.getType();
-            usuarios = gson.fromJson(reader, listType);
+            try (Reader reader = new InputStreamReader(input)) {
+                Gson gson = new Gson();
+                Type listType = new TypeToken<List<Usuario>>(){}.getType();
+                usuarios = gson.fromJson(reader, listType);
 
-        } catch(Exception e){
+                if (usuarios == null) {
+                    System.err.println("⚠️ Error: Gson no pudo parsear el JSON.");
+                } else {
+                    System.out.println("✅ Usuarios cargados: " + usuarios.size());
+                    usuarios.forEach(u -> System.out.println(u.getUsuario() + " / " + u.getPassword()));
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
+
     public boolean validar(String user, String pass){
+
         if (usuarios == null) return false;
         return usuarios.stream()
                 .anyMatch(u -> u.getUsuario().equals(user) && u.getPassword().equals(pass));
