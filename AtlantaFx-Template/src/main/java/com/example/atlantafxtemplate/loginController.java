@@ -1,8 +1,13 @@
 package com.example.atlantafxtemplate;
 
+import javafx.event.Event;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.stage.Stage;
+import com.example.atlantafxtemplate.sceneChanger;
+import com.example.atlantafxtemplate.Logica.LoginManager;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -10,71 +15,53 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class loginController implements Initializable {
 
-    @FXML
-    private AnchorPane AnchorPaneLogIn;
+    @FXML private AnchorPane AnchorPaneLogIn;
 
-    @FXML
-    private AnchorPane LoginPane;
+    @FXML private AnchorPane LoginPane;
 
-    @FXML
-    private AnchorPane AnchorPaneSignUp;
+    @FXML private AnchorPane AnchorPaneSignUp;
 
-    @FXML
-    private PasswordField confirmPassword;
+    @FXML private PasswordField confirmPassword;
 
-    @FXML
-    private TextField confirmPasswordTextField;
+    @FXML private TextField confirmPasswordTextField;
 
-    @FXML
-    private ImageView hideShowPswrdImage;
+    @FXML private ImageView hideShowPswrdImage;
 
-    @FXML
-    private ImageView hideShowPswrdImage2;
+    @FXML private ImageView hideShowPswrdImage2;
 
-    @FXML
-    private ImageView hideShowPswrdImage3;
+    @FXML private ImageView hideShowPswrdImage3;
 
-    @FXML
-    private Label lblClose;
+    @FXML private Label lblClose;
 
-    @FXML
-    private Button logInButton;
+    @FXML private Button logInButton;
 
-    @FXML
-    private TextField newPasswordTextField;
+    @FXML private TextField newPasswordTextField;
 
-    @FXML
-    private PasswordField newpassword;
+    @FXML private PasswordField newpassword;
 
-    @FXML
-    private TextField newusermaneTxtField;
+    @FXML private TextField newUserNameTxtField;
 
-    @FXML
-    private PasswordField passwordTextField;
+    @FXML private PasswordField passwordTextField;
 
-    @FXML
-    private TextField pswVisibleTextField;
+    @FXML private TextField pswVisibleTextField;
 
-    @FXML
-    private Label returnLogInLBL;
+    @FXML private Label returnLogInLBL;
 
-    @FXML
-    private AnchorPane rootPane;
+    @FXML private AnchorPane rootPane;
 
-    @FXML
-    private Button signUpButton;
+    @FXML private Button signUpButton;
 
-    @FXML
-    private TextField usernameTextField;
+    @FXML private TextField usernameTextField;
 
-    @FXML
-    void CloseLogIn(MouseEvent event) {
+    @FXML void CloseLogIn(MouseEvent event) {
         System.exit(0);
     }
 
@@ -155,7 +142,7 @@ public class loginController implements Initializable {
         newPasswordTextField.setText("");
         confirmPassword.setText("");
         confirmPasswordTextField.setText("");
-        newusermaneTxtField.setText("");
+        newUserNameTxtField.setText("");
 
         passwordTextField.setText("");
         pswVisibleTextField.setText("");
@@ -170,10 +157,6 @@ public class loginController implements Initializable {
         signUpButton.setVisible(false);
     }
 
-    @FXML
-    void LogInPress(MouseEvent event) {
-        sceneChanger.cambiarEscena("compraVehiculos-view.fxml", event);
-    }
 
     private double xOffset = 0;
     private double yOffset = 0;
@@ -195,4 +178,27 @@ public class loginController implements Initializable {
         sceneChanger.makeDraggable(LoginPane);
 
     }
+    @FXML private Label warningLbl;
+
+
+
+    private final LoginManager loginManager = new LoginManager();
+    @FXML
+    private void LogInPress() {
+        String user = usernameTextField.getText().trim();
+        String pass = passwordTextField.getText().trim();
+
+        if (loginManager.validar(user, pass)) {
+            try {
+                sceneChanger.cambiarEscena("compraVehiculos-view.fxml", null);
+
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+                warningLbl.setText("Error inesperado: " + ex.getMessage());
+            }
+        }
+    }
+
+
 }

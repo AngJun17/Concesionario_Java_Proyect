@@ -3,6 +3,7 @@ module com.example.atlantaapp {
     requires javafx.fxml;
     requires atlantafx.base;
     requires java.desktop;
+    requires com.google.gson;
 
     opens com.example.atlantafxtemplate to javafx.fxml;
     exports com.example.atlantafxtemplate;
