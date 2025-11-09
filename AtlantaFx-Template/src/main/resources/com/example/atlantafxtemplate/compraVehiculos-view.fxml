@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="comprarMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1031.0" style="-fx-background-color: #4a6c40;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atlantafxtemplate.comprarVehiculoController">
+<AnchorPane fx:id="comprarMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1031.0" style="-fx-background-color: #4A6C40;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atlantafxtemplate.comprarVehiculoController">
    <children>
       <AnchorPane layoutX="-6.0" prefHeight="54.0" prefWidth="1043.0" style="-fx-background-color: #13300b;">
          <children>

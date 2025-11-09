@@ -29,6 +29,8 @@ public class loginController implements Initializable {
 
     @FXML private AnchorPane AnchorPaneSignUp;
 
+    @FXML private Button SignIn;
+
     @FXML private PasswordField confirmPassword;
 
     @FXML private TextField confirmPasswordTextField;
@@ -189,19 +191,47 @@ public class loginController implements Initializable {
         String user = usernameTextField.getText().trim();
         String pass = pswVisibleTextField.getText().trim();
         boolean valido = loginManager.validar(user, pass);
-        System.out.println(valido);
         if (valido == true) {
             try {
-                System.out.println("valido");
                 sceneChanger.cambiarEscena("compraVehiculos-view.fxml", event);
-
             }
             catch (Exception ex) {
                 ex.printStackTrace();
                 warningLbl.setText("Error inesperado: " + ex.getMessage());
             }
         }
+        else{
+            warningLbl.setText("Contraseña o usuario incorrectos");
+        }
     }
+    @FXML private Label WarningSingInLbl;
+    @FXML
+    private void SignInbtt(MouseEvent eventt){
+        String user = newUserNameTxtField.getText().trim();
+        String pass = confirmPasswordTextField.getText().trim();
+        String pass2 = newpassword.getText().trim();
+        if (user.isEmpty() || pass.isEmpty() || pass2.isEmpty()){
+            WarningSingInLbl.setText("Debe completar todos los campos.");
+            return;
+        }
+
+        if (!newpassword.getText().trim().equals(confirmPassword.getText().trim())) {
+            WarningSingInLbl.setText("Las Contraseñas no coinciden. Intentelo de nuevo.");
+            return;
+        }
+
+        boolean registrado = loginManager.registrarUsuario(user, pass2);
+        if (registrado){
+            WarningSingInLbl.setText("Usuario registrado");
+            newUserNameTxtField.setText("");
+            confirmPasswordTextField.setText("");
+            newpassword.setText("");
+            returnLogIn(eventt);
+        }else{
+            WarningSingInLbl.setText("El usuario ya existe");
+        }
+    }
+
 
 
 }
