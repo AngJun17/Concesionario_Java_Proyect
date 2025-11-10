@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "marca" : "Toyota",
+    "modelo": "Rav4",
+    "precio": 210000,
+    "categoria": "Suv",
+    "imagen": "rav.png",
+    "descripcion": "Motor 3.0L turbo, 335 HP"
+  }
+]
