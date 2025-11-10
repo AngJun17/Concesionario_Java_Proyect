@@ -207,4 +207,57 @@
     -fx-background-color: white;   /* Flecha blanca */
 }
 
+/*===Table===*/
+/* Quita el gradiente del encabezado y aplica color plano */
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
 
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: #4d9179;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+/* Texto de encabezado */
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: center;
+}
+/* Centrar contenido de las celdas */
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+}
+
+/* --- TABLEVIEW BASE --- */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-table-cell-border-color: transparent; /* Quita líneas internas */
+    -fx-border-color: transparent;            /* Quita borde exterior */
+}
+
+/* --- FILAS --- */
+.table-row-cell {
+    -fx-background-color: #567a4b; /* Fondo de cada fila */
+    -fx-border-color: transparent;/* Quita los bordes entre filas */
+
+}
+
+/* --- CELDAS --- */
+.table-cell {
+    -fx-background-color: transparent; /* Quita el fondo gris */
+    -fx-text-fill: white;              /* 👈 texto visible (pon black si tu fondo es claro) */
+}
+
+/* --- HOVER Y SELECCIÓN (opcional, leve transparencia) --- */
+.table-row-cell:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+}
+
+.table-row-cell:selected {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-text-fill: white;
+}

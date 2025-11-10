@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -39,17 +41,57 @@
                 <Font size="27.0" />
             </font>
         </Label>
-      <TextField fx:id="CampoDeBusqueda" layoutX="181.0" layoutY="145.0" prefHeight="33.0" prefWidth="274.0" promptText="Buscar vehiculo" styleClass="text-field" />
+      <TextField fx:id="CampoDeBusqueda" layoutX="181.0" layoutY="145.0" prefHeight="33.0" prefWidth="274.0" promptText="Buscar vehiculo" styleClass="text-field">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
       <Spinner fx:id="buscarModelo" editable="true" layoutX="597.0" layoutY="155.0" prefHeight="33.0" prefWidth="166.0" style="-fx-background-color: #2DFCD9;" />
-      <Label layoutX="597.0" layoutY="126.0" prefHeight="18.0" prefWidth="136.0" text="Modelo del Vehiculo" textFill="WHITE" />
-      <Label layoutX="318.0" layoutY="232.0" prefHeight="18.0" prefWidth="136.0" text="Monto Q." textFill="WHITE" />
-      <Label layoutX="318.0" layoutY="387.0" prefHeight="18.0" prefWidth="136.0" text="Porcentaje de Interes" textFill="WHITE" />
-      <Label layoutX="318.0" layoutY="304.0" prefHeight="18.0" prefWidth="136.0" text="Tipo de pago" textFill="WHITE" />
-      <Label layoutX="318.0" layoutY="453.0" prefHeight="18.0" prefWidth="136.0" text="Número de cuotas" textFill="WHITE" />
-      <Button fx:id="CotizarBtt" layoutX="444.0" layoutY="537.0" mnemonicParsing="false" onAction="#CotizarClick" prefHeight="34.0" prefWidth="194.0" styleClass="jfx-button-green" text="COTIZAR" />
-      <TextField fx:id="MontoLbl" layoutX="598.0" layoutY="225.0" promptText="Monto" styleClass="text-field" />
+      <Label layoutX="597.0" layoutY="126.0" prefHeight="27.0" prefWidth="174.0" text="Modelo del Vehiculo" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="318.0" layoutY="232.0" prefHeight="18.0" prefWidth="136.0" text="Monto Q." textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="318.0" layoutY="387.0" prefHeight="27.0" prefWidth="174.0" text="Porcentaje de Interes" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="318.0" layoutY="304.0" prefHeight="18.0" prefWidth="136.0" text="Tipo de pago" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="318.0" layoutY="453.0" prefHeight="18.0" prefWidth="136.0" text="Número de cuotas" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="CotizarBtt" layoutX="444.0" layoutY="537.0" mnemonicParsing="false" onMouseClicked="#CotizarClick" prefHeight="34.0" prefWidth="194.0" styleClass="jfx-button-green" text="COTIZAR" />
+      <TextField fx:id="MontoLbl" layoutX="598.0" layoutY="225.0" promptText="Q" styleClass="text-field" />
       <TextField fx:id="InteresLbl" layoutX="598.0" layoutY="371.0" promptText="\%" styleClass="text-field" />
       <ComboBox fx:id="TipoCuota" layoutX="597.0" layoutY="445.0" prefHeight="18.0" prefWidth="166.0" promptText="Cuotas" />
       <ComboBox fx:id="TipoPago" layoutX="597.0" layoutY="296.0" prefHeight="18.0" prefWidth="166.0" promptText="Tipo Pago" styleClass="combo-box" />
+      <AnchorPane fx:id="AnchorpaneTablaCot" layoutX="-6.0" layoutY="53.0" prefHeight="560.0" prefWidth="1043.0" style="-fx-background-color: #4a6c40;" visible="false">
+         <children>
+            <TableView fx:id="TableViewCotizacion" layoutX="228.0" layoutY="95.0" prefHeight="437.0" prefWidth="587.0" styleClass="column-header-background">
+              <columns>
+                <TableColumn fx:id="columnaNo" editable="false" prefWidth="59.0" resizable="false" text="No." />
+                <TableColumn fx:id="columnaValordeCuota" editable="false" prefWidth="188.0" resizable="false" text="Valor de la Cuota" />
+                  <TableColumn fx:id="columnaInteres" editable="false" prefWidth="173.0" resizable="false" text="Interes" />
+                  <TableColumn fx:id="columnaSaldoCapital" editable="false" prefWidth="169.0" resizable="false" text="Saldo a Capital" />
+              </columns>
+            </TableView>
+            <Label layoutX="459.0" layoutY="28.0" text="Cotizacion" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="returnCotizacion" layoutX="38.0" layoutY="-1.0" onMouseClicked="#returnCotizacion" prefHeight="136.0" prefWidth="103.0" text="←" textFill="WHITE">
+               <font>
+                  <Font size="63.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
     </children>
 </AnchorPane>
