@@ -89,7 +89,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="ButtonSubirFotos" layoutX="600.0" layoutY="184.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="265.0" styleClass="jfx-button-green" text="SUBIR FOTOS   ▲">
+      <Button fx:id="ButtonSubirFotos" layoutX="600.0" layoutY="184.0" mnemonicParsing="false" onMouseClicked="#subirFotos" prefHeight="34.0" prefWidth="265.0" styleClass="jfx-button-green" text="SUBIR FOTOS   ▲">
          <font>
             <Font size="15.0" />
          </font>
@@ -100,7 +100,7 @@
             <ImageView fx:id="ImagenSubida2" fitHeight="206.0" fitWidth="238.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </FlowPane>
-      <Button layoutX="601.0" layoutY="509.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="265.0" styleClass="jfx-button-green" text="PUBLICAR">
+      <Button layoutX="601.0" layoutY="509.0" mnemonicParsing="false" onMouseClicked="#publicarVehiculo" prefHeight="34.0" prefWidth="265.0" styleClass="jfx-button-green" text="PUBLICAR">
          <font>
             <Font size="15.0" />
          </font>
