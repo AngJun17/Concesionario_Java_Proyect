@@ -204,9 +204,11 @@ public class loginController implements Initializable {
             warningLbl.setText("Contraseña o usuario incorrectos");
         }
     }
+
     @FXML private Label WarningSingInLbl;
     @FXML
     private void SignInbtt(MouseEvent eventt){
+
         String user = newUserNameTxtField.getText().trim();
         String pass = confirmPasswordTextField.getText().trim();
         String pass2 = newpassword.getText().trim();
@@ -222,6 +224,7 @@ public class loginController implements Initializable {
 
         boolean registrado = loginManager.registrarUsuario(user, pass2);
         if (registrado){
+            sceneChanger.mensajeRegistro(eventt);
             WarningSingInLbl.setText("Usuario registrado");
             newUserNameTxtField.setText("");
             confirmPasswordTextField.setText("");

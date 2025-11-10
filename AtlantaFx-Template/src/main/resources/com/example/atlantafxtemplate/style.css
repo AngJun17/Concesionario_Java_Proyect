@@ -54,6 +54,36 @@
     -fx-cursor: default;
 }
 
+/* ====== JFXBUTTON OTRO COLOR====== */
+.jfx-button-OC {
+    -fx-background-color: #4d9179;/*transparent;*/
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+    -fx-effect: none;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* Hover: elevación y fondo suave */
+.jfx-button-OC:hover {
+    -fx-background-color: #5f9c86;
+    -fx-effect: dropshadow(gaussian, rgba(63,81,181,0.25), 8, 0.3, 0, 2);
+}
+
+/* Click: animación suave tipo ripple */
+.jfx-button-OC:pressed {
+    -fx-background-color: #a2ebd1;
+    -fx-translate-y: 1;
+}
+
+
+
+
+
+
+
 /* ====== BOTON TRANSPARENTE ====== */
 .jfx-button-transparent {
     -fx-background-color: transparent;
@@ -128,4 +158,48 @@
 .jfoenix-alert .button:pressed {
     -fx-background-color: rgba(63,81,181,0.2);
 }
+
+/* Scrollbar vertical */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent; /* Fondo de la barra de scroll */
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #b1db93; /* Color de la "thumb" (la parte que se mueve) */
+    -fx-background-insets: 0;
+    -fx-background-radius: 6px; /* Redondear bordes */
+}
+
+.scroll-pane {
+    -fx-opacity: 1; /* El contenido nunca se atenúa */
+}
+
+.scroll-pane .viewport {
+    -fx-opacity: 1; /* Viewport también */
+}
+
+/* ComboBox principal */
+.combo-box {
+    -fx-background-color:  transparent; /* Fondo  */
+    -fx-border-width: 0 0 2 0;         /* Solo borde inferior */
+    -fx-border-color: white;           /* Línea blanca abajo */
+    -fx-padding: 0 0 5 0;              /* Ajusta espacio del texto */
+}
+
+/* Prompt text (título del ComboBox) */
+.combo-box .text-field .text {
+    -fx-fill: white;                   /* Texto blanco */
+}
+
+/* Items desplegables */
+.combo-box .list-cell {
+    -fx-text-fill: black;              /* Texto de los items blanco */
+}
+
+/* Flecha del ComboBox */
+.combo-box .arrow {
+    -fx-background-color: white;       /* Color de la flecha */
+    -fx-background-insets: 0;
+}
+
 

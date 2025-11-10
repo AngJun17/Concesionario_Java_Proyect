@@ -2,12 +2,17 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="comprarMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1031.0" style="-fx-background-color: #4A6C40;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atlantafxtemplate.comprarVehiculoController">
+<AnchorPane fx:id="comprarMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1031.0" style="-fx-background-color: #4a6c40;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atlantafxtemplate.comprarVehiculoController">
    <children>
       <AnchorPane layoutX="-6.0" prefHeight="54.0" prefWidth="1043.0" style="-fx-background-color: #13300b;">
          <children>
@@ -18,7 +23,7 @@
             </Button>
             <Button fx:id="serviciosButton" layoutX="360.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#serviciosPresionado" styleClass="jfx-button-transparent" text="Servicios" />
             <Button fx:id="cotizarButton" layoutX="531.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#cotizarPresionado" styleClass="jfx-button-transparent" text="Cotizar" />
-            <Button fx:id="venderBuatton" layoutX="688.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#venderPresionado" styleClass="jfx-button-transparent" text="Vender" />
+            <Button fx:id="venderButton" layoutX="688.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#venderPresionado" styleClass="jfx-button-transparent" text="Vender" />
             <ImageView fx:id="carritoImage" fitHeight="53.0" fitWidth="61.0" layoutX="956.0" layoutY="1.0" onMouseClicked="#carritoPresionado" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/carrito.png" />
@@ -31,10 +36,153 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label layoutX="44.0" layoutY="79.0" text="Catalogo Vehiculos" textFill="WHITE">
+      <Label layoutX="31.0" layoutY="78.0" text="Catalogo Vehiculos" textFill="WHITE">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
+      <ScrollPane fx:id="ScrollPaneMarketPlace" layoutX="-5.0" layoutY="136.0" prefHeight="482.0" prefWidth="1031.0" style="-fx-background-color: transparent;">
+        <content>
+          <AnchorPane fx:id="PaneMarketPlace" minHeight="0.0" minWidth="0.0" prefHeight="792.0" prefWidth="1013.0" style="-fx-background-color: #4a6c40;">
+               <children>
+                  <FlowPane fx:id="flowPane1" layoutX="110.0" layoutY="-1.0" prefHeight="243.0" prefWidth="926.0" style="-fx-background-color: #4a6c40;">
+                     <children>
+                        <VBox fx:id="VBoxProducto1" prefHeight="220.0" prefWidth="239.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fx:id="ImagenProducto1" fitHeight="146.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombreProducto1" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="246.0" style="-fx-background-color: #71a164;" text="Nombre" textFill="WHITE" />
+                              <HBox prefHeight="29.0" prefWidth="241.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: #71a164;" text="Precio" textFill="WHITE" />
+                                    <Label fx:id="labelPrecioProducto1" alignment="CENTER" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #71a164;" text="Q52,000" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="ButtonProducto1" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" styleClass="jfx-button-OC" text="Cotizar" />
+                           </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="220.0" prefWidth="19.0" />
+                        <VBox fx:id="VBoxProducto2" layoutX="10.0" layoutY="10.0" prefHeight="220.0" prefWidth="239.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fx:id="ImagenProducto2" fitHeight="146.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombreProducto2" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="246.0" style="-fx-background-color: #71a164;" text="Nombre" textFill="WHITE" />
+                              <HBox prefHeight="29.0" prefWidth="241.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: #71a164;" text="Precio" textFill="WHITE" />
+                                    <Label fx:id="labelPrecioProducto2" alignment="CENTER" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #71a164;" text="Q52,000" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="ButtonProducto2" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" styleClass="jfx-button-OC" text="Cotizar" />
+                           </children>
+                        </VBox>
+                        <Separator layoutX="248.0" layoutY="10.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="19.0" />
+                        <VBox fx:id="VBoxProducto3" layoutX="10.0" layoutY="10.0" prefHeight="220.0" prefWidth="239.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fx:id="ImagenProducto3" fitHeight="146.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombreProducto3" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="246.0" style="-fx-background-color: #71a164;" text="Nombre" textFill="WHITE" />
+                              <HBox prefHeight="29.0" prefWidth="241.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: #71a164;" text="Precio" textFill="WHITE" />
+                                    <Label fx:id="labelPrecioProducto3" alignment="CENTER" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #71a164;" text="Q52,000" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="ButtonProducto3" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" styleClass="jfx-button-OC" text="Cotizar" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </FlowPane>
+                  <FlowPane fx:id="flowPane2" layoutX="110.0" layoutY="243.0" prefHeight="242.0" prefWidth="936.0" style="-fx-background-color: #4a6c40;">
+                     <children>
+                        <VBox fx:id="VBoxProducto4" prefHeight="220.0" prefWidth="239.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fx:id="ImagenProducto4" fitHeight="146.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombreProducto4" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="246.0" style="-fx-background-color: #71a164;" text="Nombre" textFill="WHITE" />
+                              <HBox prefHeight="29.0" prefWidth="241.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: #71a164;" text="Precio" textFill="WHITE" />
+                                    <Label fx:id="labelPrecioProducto4" alignment="CENTER" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #71a164;" text="Q52,000" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="ButtonProducto4" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" styleClass="jfx-button-OC" text="Cotizar" />
+                           </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="220.0" prefWidth="19.0" />
+                        <VBox fx:id="VBoxProducto5" layoutX="10.0" layoutY="10.0" prefHeight="220.0" prefWidth="239.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fx:id="ImagenProducto5" fitHeight="146.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombreProducto5" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="246.0" style="-fx-background-color: #71a164;" text="Nombre" textFill="WHITE" />
+                              <HBox prefHeight="29.0" prefWidth="241.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: #71a164;" text="Precio" textFill="WHITE" />
+                                    <Label fx:id="labelPrecioProducto5" alignment="CENTER" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #71a164;" text="Q52,000" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="ButtonProducto5" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" styleClass="jfx-button-OC" text="Cotizar" />
+                           </children>
+                        </VBox>
+                        <Separator layoutX="248.0" layoutY="10.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="19.0" />
+                        <VBox fx:id="VBoxProducto6" layoutX="270.0" layoutY="10.0" prefHeight="220.0" prefWidth="239.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fx:id="ImagenProducto6" fitHeight="146.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombreProducto6" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="246.0" style="-fx-background-color: #71a164;" text="Nombre" textFill="WHITE" />
+                              <HBox prefHeight="29.0" prefWidth="241.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: #71a164;" text="Precio" textFill="WHITE" />
+                                    <Label fx:id="labelPrecioProducto6" alignment="CENTER" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #71a164;" text="Q52,000" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="ButtonProducto6" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" styleClass="jfx-button-OC" text="Cotizar" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </FlowPane>
+                  <FlowPane fx:id="flowPane3" layoutX="111.0" layoutY="487.0" prefHeight="241.0" prefWidth="925.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <VBox fx:id="VBoxProducto7" layoutX="289.0" layoutY="10.0" prefHeight="220.0" prefWidth="239.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fx:id="ImagenProducto7" fitHeight="146.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombreProducto7" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="246.0" style="-fx-background-color: #71a164;" text="Nombre" textFill="WHITE" />
+                              <HBox prefHeight="29.0" prefWidth="241.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: #71a164;" text="Precio" textFill="WHITE" />
+                                    <Label fx:id="labelPrecioProducto7" alignment="CENTER" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #71a164;" text="Q52,000" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="ButtonProducto7" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" styleClass="jfx-button-OC" text="Cotizar" />
+                           </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="220.0" prefWidth="19.0" />
+                        <VBox fx:id="VBoxProducto8" prefHeight="220.0" prefWidth="239.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fx:id="ImagenProducto8" fitHeight="146.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombreProducto8" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="246.0" style="-fx-background-color: #71a164;" text="Nombre" textFill="WHITE" />
+                              <HBox prefHeight="29.0" prefWidth="241.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: #71a164;" text="Precio" textFill="WHITE" />
+                                    <Label fx:id="labelPrecioProducto8" alignment="CENTER" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #71a164;" text="Q52,000" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="ButtonProducto8" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" styleClass="jfx-button-OC" text="Cotizar" />
+                           </children>
+                        </VBox>
+                        <Separator layoutX="248.0" layoutY="10.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="19.0" />
+                        <VBox fx:id="VBoxProducto9" layoutX="29.0" layoutY="10.0" prefHeight="220.0" prefWidth="239.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fx:id="ImagenProducto9" fitHeight="146.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombreProducto9" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="246.0" style="-fx-background-color: #71a164;" text="Nombre" textFill="WHITE" />
+                              <HBox prefHeight="29.0" prefWidth="241.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="108.0" style="-fx-background-color: #71a164;" text="Precio" textFill="WHITE" />
+                                    <Label fx:id="labelPrecioProducto9" alignment="CENTER" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #71a164;" text="Q52,000" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="ButtonProducto9" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" styleClass="jfx-button-OC" text="Cotizar" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </FlowPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

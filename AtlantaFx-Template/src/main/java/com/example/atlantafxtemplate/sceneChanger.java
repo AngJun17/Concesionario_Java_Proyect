@@ -68,4 +68,24 @@ public class sceneChanger {
             cambiarEscena("loginPage.fxml", event);
         } else if (opcion.get() == botonNo) {}
     }
+
+    public static void mensajeRegistro(javafx.event.Event event) {
+        Alert mensaje = new Alert(Alert.AlertType.CONFIRMATION);
+        mensaje.setTitle("REGISTRO");
+        mensaje.setHeaderText("NUEVO USUARIO");
+        mensaje.setContentText("Usuario registrado exitosamente");
+        ButtonType botonAceptar = new ButtonType("ACEPTAR");
+        mensaje.getButtonTypes().setAll(botonAceptar);
+
+        DialogPane dialogPane = mensaje.getDialogPane();
+        Stage stage = (Stage) mensaje.getDialogPane().getScene().getWindow();
+        stage.initStyle(StageStyle.UNDECORATED);
+        dialogPane.getStylesheets().add(sceneChanger.class.getResource("style.css").toExternalForm());
+        dialogPane.getStyleClass().add("jfoenix-alert");
+
+        Optional<ButtonType> opcion = mensaje.showAndWait();
+        if (opcion.get() == botonAceptar) {
+            cambiarEscena("loginPage.fxml", event);
+        }
+    }
 }
