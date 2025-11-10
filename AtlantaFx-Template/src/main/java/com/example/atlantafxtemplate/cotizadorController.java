@@ -68,4 +68,9 @@ public class cotizadorController implements Initializable {
         sceneChanger.makeDraggable(cotizadorMainPane);
     }
 
+    @FXML
+    private void CotizarClick(MouseEvent event) {
+
+    }
+
 }
