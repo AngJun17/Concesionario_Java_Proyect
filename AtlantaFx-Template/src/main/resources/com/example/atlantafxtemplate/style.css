@@ -178,28 +178,33 @@
     -fx-opacity: 1; /* Viewport también */
 }
 
-/* ComboBox principal */
+/* ComboBox base */
 .combo-box {
-    -fx-background-color:  transparent; /* Fondo  */
-    -fx-border-width: 0 0 2 0;         /* Solo borde inferior */
-    -fx-border-color: white;           /* Línea blanca abajo */
-    -fx-padding: 0 0 5 0;              /* Ajusta espacio del texto */
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 2 0;   /* Línea inferior */
+    -fx-border-color: white;
 }
 
-/* Prompt text (título del ComboBox) */
-.combo-box .text-field .text {
-    -fx-fill: white;                   /* Texto blanco */
-}
-
-/* Items desplegables */
+/* Texto del prompt y del elemento seleccionado */
 .combo-box .list-cell {
-    -fx-text-fill: black;              /* Texto de los items blanco */
+    -fx-text-fill: white;  /* Texto blanco arriba */
+    -fx-background-color: transparent;
 }
 
-/* Flecha del ComboBox */
+/* Ítems del menú desplegable */
+.combo-box-popup .list-view .list-cell {
+    -fx-text-fill: black;          /* Texto negro en el menú */
+    -fx-background-color: white;   /* Fondo blanco */
+}
+
+/* Ítem cuando pasas el mouse encima */
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #e0e0e0; /* Gris claro al pasar el mouse */
+}
+
+/* Flecha */
 .combo-box .arrow {
-    -fx-background-color: white;       /* Color de la flecha */
-    -fx-background-insets: 0;
+    -fx-background-color: white;   /* Flecha blanca */
 }
 
 
