@@ -2,9 +2,7 @@ package com.example.atlantafxtemplate;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -13,11 +11,33 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class carritoController implements Initializable {
+
     @FXML
-    private AnchorPane carritoMainPane;
+    private AnchorPane AnchorPaneFactura;
+
+    @FXML
+    private AnchorPane AnchorPaneScrollPaneCarrito;
+
+    @FXML
+    private Button BotonComprarCarrito;
+
+    @FXML
+    private ImageView ImagenProducto1;
+
+    @FXML
+    private TextField InformeFacturacionTextField;
+
+    @FXML
+    private TextField MetododePagoTextField;
+
+    @FXML
+    private ScrollPane ScrollPaneCarrito;
 
     @FXML
     private ImageView carritoImage;
+
+    @FXML
+    private AnchorPane carritoMainPane;
 
     @FXML
     private Button comprarButton;
@@ -26,10 +46,19 @@ public class carritoController implements Initializable {
     private Button cotizarButton;
 
     @FXML
+    private TextField detallesDePagoTextField;
+
+    @FXML
     private ImageView exitImage;
 
     @FXML
+    private Label returnCarrito;
+
+    @FXML
     private Button serviciosButton;
+
+    @FXML
+    private TextArea textAreaDetalles1;
 
     @FXML
     private Button venderBuatton;
@@ -64,8 +93,27 @@ public class carritoController implements Initializable {
         sceneChanger.cambiarEscena("venderVehiculo-view.fxml", event);
     }
 
+    @FXML
+    void botonComprarCarritoPressed(MouseEvent event) {
+        AnchorPaneFactura.setVisible(true);
+        ScrollPaneCarrito.setVisible(false);
+    }
+
+    @FXML
+    void returnCarrito(MouseEvent event) {
+        detallesDePagoTextField.setText("");
+        InformeFacturacionTextField.setText("");
+        MetododePagoTextField.setText("");
+        AnchorPaneFactura.setVisible(false);
+        ScrollPaneCarrito.setVisible(true);
+
+    }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ScrollPaneCarrito.setVisible(true);
+        AnchorPaneFactura.setVisible(false);
         sceneChanger.makeDraggable(carritoMainPane);
     }
 }

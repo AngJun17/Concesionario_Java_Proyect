@@ -4,10 +4,7 @@ import com.example.atlantafxtemplate.Logica.VenderManager;
 import com.example.atlantafxtemplate.Modelo.Carro;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -25,8 +22,12 @@ import java.io.IOException;
 import java.util.ResourceBundle;
 
 public class venderVehiculoController implements Initializable {
+
     @FXML
     private Button ButtonSubirFotos;
+
+    @FXML
+    private Label CategoriaLbl;
 
     @FXML
     private ImageView ImagenSubida1;
@@ -35,7 +36,22 @@ public class venderVehiculoController implements Initializable {
     private ImageView ImagenSubida2;
 
     @FXML
+    private Label MarcaLbl;
+
+    @FXML
+    private TextField MarcaTextField1;
+
+    @FXML
+    private Label ModeloLbl;
+
+    @FXML
+    private TextField ModeloTextField11;
+
+    @FXML
     private VBox VBoxDatos;
+
+    @FXML
+    private VBox VBoxDatos2;
 
     @FXML
     private ImageView carritoImage;
@@ -46,7 +62,6 @@ public class venderVehiculoController implements Initializable {
     @FXML
     private ComboBox<String> comboBoxCategoria;
 
-
     @FXML
     private Button comprarButton;
 
@@ -55,12 +70,6 @@ public class venderVehiculoController implements Initializable {
 
     @FXML
     private TextField estadoVehiculoTextField;
-
-    @FXML
-    private TextField MarcaTextField1;
-
-    @FXML
-    private TextField ModeloTextField11;
 
     @FXML
     private ImageView exitImage;
@@ -82,8 +91,6 @@ public class venderVehiculoController implements Initializable {
 
     @FXML
     private AnchorPane venderMainPane;
-
-
 
     @FXML
     void carritoPresionado(MouseEvent event) {

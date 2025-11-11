@@ -2,13 +2,19 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="carritoMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1031.0" style="-fx-background-color: #4a6c40;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atlantafxtemplate.carritoController">
     <children>
+      <Button fx:id="BotonComprarCarrito" layoutX="696.0" layoutY="544.0" mnemonicParsing="false" onMouseClicked="#botonComprarCarritoPressed" prefHeight="32.0" prefWidth="251.0" styleClass="jfx-button-green" text="COMPRAR" textFill="WHITE" />
         <AnchorPane layoutX="-6.0" prefHeight="54.0" prefWidth="1043.0" style="-fx-background-color: #13300b;">
             <children>
                 <Button fx:id="comprarButton" layoutX="196.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#comprarPresionado" styleClass="jfx-button-transparent" text="Comprar">
@@ -36,14 +42,54 @@
                 <Font size="27.0" />
             </font>
         </Label>
-      <AnchorPane layoutY="55.0" prefHeight="552.0" prefWidth="1037.0" style="-fx-background-color: #4a6c40;" visible="false">
+      <AnchorPane fx:id="AnchorPaneFactura" layoutY="55.0" prefHeight="552.0" prefWidth="1037.0" style="-fx-background-color: #4a6c40;" visible="false">
          <children>
-            <Label layoutX="45.0" layoutY="24.0" text="Factura" textFill="WHITE">
+            <Label layoutX="393.0" layoutY="37.0" text="Datos de Facturacion" textFill="WHITE">
                <font>
                   <Font size="27.0" />
                </font>
             </Label>
+            <VBox layoutX="102.0" layoutY="132.0" prefHeight="371.0" prefWidth="360.0">
+               <children>
+                  <Label text="Informe de Facturacion" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="InformeFacturacionTextField" />
+                  <Separator prefHeight="58.0" prefWidth="360.0" visible="false" />
+                  <Label text="Metodo de Pago" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="MetododePagoTextField" />
+                  <Separator layoutX="10.0" layoutY="72.0" prefHeight="58.0" prefWidth="360.0" visible="false" />
+                  <Label layoutX="10.0" layoutY="106.0" text="Detalles de Pago" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="detallesDePagoTextField" layoutX="10.0" layoutY="136.0" />
+               </children>
+            </VBox>
+            <Button layoutX="622.0" layoutY="451.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="299.0" styleClass="jfx-button-green" text="CONFIRMAR PAGO" />
+            <Label fx:id="returnCarrito" layoutX="51.0" layoutY="-24.0" onMouseClicked="#returnCarrito" prefHeight="136.0" prefWidth="103.0" text="←" textFill="WHITE">
+               <font>
+                  <Font size="63.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
+      <ScrollPane fx:id="ScrollPaneCarrito" layoutX="68.0" layoutY="148.0" prefHeight="371.0" prefWidth="892.0" style="-fx-background-color: #4a6c40;">
+        <content>
+          <AnchorPane fx:id="AnchorPaneScrollPaneCarrito" minHeight="0.0" minWidth="0.0" prefHeight="430.0" prefWidth="874.0" style="-fx-background-color: #4a6c40;">
+               <children>
+                  <ImageView fx:id="ImagenProducto1" fitHeight="191.0" fitWidth="227.0" layoutX="72.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextArea fx:id="textAreaDetalles1" editable="false" layoutX="339.0" layoutY="102.0" prefHeight="87.0" prefWidth="499.0" promptText="Detalles" styleClass="text-area" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
     </children>
 </AnchorPane>
