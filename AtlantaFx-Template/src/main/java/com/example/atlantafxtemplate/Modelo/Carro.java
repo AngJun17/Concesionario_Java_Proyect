@@ -8,8 +8,10 @@ public class Carro {
     private String categoria;
     private String imagen;
     private String descripcion;
+    private int anio;
+    private String estado;
 
-    public Carro(int id,String marca, String modelo , double precio, String categoria, String imagen, String descripcion) {
+    public Carro(int id,String marca, String modelo , double precio, String categoria, String imagen, String descripcion, int anio, String estado) {
         setId(id);
         setMarca(marca);
         setModelo(modelo);
@@ -17,7 +19,8 @@ public class Carro {
         setCategoria(categoria);
         setImagen(imagen);
         setDescripcion(descripcion);
-
+        setAnio(anio);
+        setEstado(estado);
     }
 
     public void setId(int id){this.id = id;}
@@ -40,4 +43,10 @@ public class Carro {
 
     public void setDescripcion(String descripcion){this.descripcion= descripcion;}
     public String getDescripcion(){return descripcion;}
+
+    public int getAnio() {return anio;}
+    public void setAnio(int anio) {this.anio = anio;}
+
+    public String getEstado() {return estado;}
+    public void setEstado(String estado) {this.estado = estado;}
 }

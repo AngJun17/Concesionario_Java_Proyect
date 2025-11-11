@@ -60,8 +60,43 @@ public class VenderManager {
         return carros;
    }
 
-   public void agregarCarro(Carro carro) {
-       carros.add(carro);
-       guardarCarros();
+    public boolean agregarCarro(String marca, String modelo, double precioOriginal, int anio, String categoria, String descripcion, String imagen, String estado) {
+        double precioFinal = CalculadoraValorVehiculo.calcularPrecioFinal(anio, estado, precioOriginal);
+
+        if (precioFinal == -1) {
+            System.out.println("Vehículo demasiado antiguo, no se puede cotizar.");
+            return false;
+        }
+
+        boolean existe = carros.stream()
+                .anyMatch(c -> c.getMarca().equalsIgnoreCase(marca)
+                        && c.getModelo().equalsIgnoreCase(modelo)
+                        && c.getAnio() == anio);
+
+        if (existe) {
+            System.out.println("Ya existe otro vehículo registrado.");
+            return false;
+        }
+
+        Carro nuevo = new Carro(
+                carros.size() + 1, // id
+                marca,
+                modelo,
+                precioFinal,
+                categoria,
+                imagen,
+                descripcion,
+                anio,
+                estado
+        );
+
+        carros.add(nuevo);
+        guardarCarros();
+        return true;
+    }
+
+    public int obtenerSiguienteId() {
+       if (carros == null || carros.isEmpty()) return 1;
+       return carros.get(carros.size() - 1).getId() + 1;
    }
 }

@@ -1,11 +1,45 @@
 [
   {
     "id": 1,
-    "marca" : "Toyota",
+    "marca": "Toyota",
     "modelo": "Rav4",
-    "precio": 210000,
+    "precio": 210000.0,
     "categoria": "Suv",
     "imagen": "rav.png",
-    "descripcion": "Motor 3.0L turbo, 335 HP"
+    "descripcion": "Motor 3.0L turbo, 335 HP",
+    "anio": 0
+  },
+  {
+    "id": 2,
+    "marca": "Mazda",
+    "modelo": "cx-30",
+    "precio": 123500.0,
+    "categoria": "Hatchback",
+    "imagen": "Mazdita.jpg",
+    "descripcion": "4 cilindros, sky active, motor turbo",
+    "anio": 2025,
+    "estado": "como nuevo"
+  },
+  {
+    "id": 3,
+    "marca": "xcZXcZXc",
+    "modelo": "mvmnvmnbm",
+    "precio": 4275000.0,
+    "categoria": "Pickup",
+    "imagen": "default.png",
+    "descripcion": "adsfasdfads",
+    "anio": 2023,
+    "estado": "como nuevo"
+  },
+  {
+    "id": 4,
+    "marca": "Kawasaki",
+    "modelo": "ninja",
+    "precio": 128250.0,
+    "categoria": "Moto",
+    "imagen": "MazditaInterior.jpg",
+    "descripcion": "motor 4 cilindros",
+    "anio": 2022,
+    "estado": "como nuevo"
   }
 ]

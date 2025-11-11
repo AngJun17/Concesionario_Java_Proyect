@@ -41,69 +41,95 @@
                 <Font size="27.0" />
             </font>
         </Label>
-      <VBox fx:id="VBoxDatos" layoutX="132.0" layoutY="143.0" prefHeight="442.0" prefWidth="295.0" style="-fx-background-color: transparent;">
+      <VBox fx:id="VBoxDatos" layoutX="44.0" layoutY="125.0" prefHeight="464.0" prefWidth="313.0" style="-fx-background-color: transparent;">
          <children>
-            <Label prefHeight="36.0" prefWidth="265.0" text="Informacion del Vehiculo" textFill="WHITE">
+            <Label prefHeight="0.0" prefWidth="245.0" text="Informacion del Vehiculo" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="informacionVehiculoTextFIeld" prefHeight="41.0" prefWidth="265.0" styleClass="text-field">
+            <TextField fx:id="informacionVehiculoTextFIeld" prefHeight="0.0" prefWidth="314.0" styleClass="text-field">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
             <Separator prefHeight="25.0" prefWidth="265.0" visible="false" />
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="45.0" prefWidth="265.0" text="Año del Vehiculo" textFill="WHITE">
+            <Label fx:id="MarcaLbl" prefHeight="5.0" prefWidth="266.0" text="Marca" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="MarcaTextField1" prefHeight="0.0" prefWidth="314.0" styleClass="text-field">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label fx:id="ModeloLbl" prefHeight="5.0" prefWidth="266.0" text="Modelo" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ModeloTextField11" prefHeight="0.0" prefWidth="314.0" styleClass="text-field">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="266.0" text="Año del Vehiculo" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
             <ComboBox fx:id="comboBoxAnio" prefHeight="30.0" prefWidth="154.0" promptText="Año" />
             <Separator layoutX="10.0" layoutY="96.0" prefHeight="25.0" prefWidth="265.0" visible="false" />
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="265.0" text="Estado del Vehiculo" textFill="WHITE">
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="5.0" prefWidth="266.0" text="Estado del Vehiculo" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="estadoVehiculoTextField" layoutX="10.0" layoutY="55.0" prefHeight="41.0" prefWidth="265.0" styleClass="text-field">
+            <TextField fx:id="estadoVehiculoTextField" layoutX="10.0" layoutY="55.0" prefHeight="5.0" prefWidth="314.0" styleClass="text-field">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
             <Separator layoutX="10.0" layoutY="196.0" prefHeight="25.0" prefWidth="265.0" visible="false" />
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="39.0" prefWidth="265.0" text="Precio de Venta" textFill="WHITE">
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="4.0" prefWidth="266.0" text="Precio de Venta" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="precioTextField" layoutX="10.0" layoutY="55.0" prefHeight="41.0" prefWidth="265.0" styleClass="text-field">
+            <TextField fx:id="precioTextField" layoutX="10.0" layoutY="55.0" prefHeight="0.0" prefWidth="314.0" styleClass="text-field">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
          </children>
       </VBox>
-      <Label layoutX="652.0" layoutY="143.0" text="Fotos del Vehiculo" textFill="WHITE">
+      <Label layoutX="707.0" layoutY="143.0" text="Fotos del Vehiculo" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="ButtonSubirFotos" layoutX="600.0" layoutY="184.0" mnemonicParsing="false" onMouseClicked="#subirFotos" prefHeight="34.0" prefWidth="265.0" styleClass="jfx-button-green" text="SUBIR FOTOS   ▲">
+      <Button fx:id="ButtonSubirFotos" layoutX="656.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#subirFotos" prefHeight="34.0" prefWidth="265.0" styleClass="jfx-button-green" text="SUBIR FOTOS   ▲">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <FlowPane fx:id="flowPaneFotos" layoutX="494.0" layoutY="254.0" prefHeight="206.0" prefWidth="477.0">
+      <FlowPane fx:id="flowPaneFotos" layoutX="588.0" layoutY="254.0" prefHeight="206.0" prefWidth="402.0">
          <children>
-            <ImageView fx:id="ImagenSubida1" fitHeight="206.0" fitWidth="238.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImagenSubida2" fitHeight="206.0" fitWidth="238.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImagenSubida1" fitHeight="206.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImagenSubida2" fitHeight="206.0" fitWidth="200.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </FlowPane>
-      <Button layoutX="601.0" layoutY="509.0" mnemonicParsing="false" onMouseClicked="#publicarVehiculo" prefHeight="34.0" prefWidth="265.0" styleClass="jfx-button-green" text="PUBLICAR">
+      <Button layoutX="656.0" layoutY="509.0" mnemonicParsing="false" onMouseClicked="#publicarVehiculo" prefHeight="34.0" prefWidth="265.0" styleClass="jfx-button-green" text="PUBLICAR">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
+      <Label fx:id="CategoriaLbl" layoutX="396.0" layoutY="110.0" prefHeight="30.0" prefWidth="154.0" text="Categoria" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboBoxCategoria" layoutX="396.0" layoutY="158.0" prefHeight="30.0" prefWidth="163.0" promptText="Tipo" />
     </children>
 </AnchorPane>
