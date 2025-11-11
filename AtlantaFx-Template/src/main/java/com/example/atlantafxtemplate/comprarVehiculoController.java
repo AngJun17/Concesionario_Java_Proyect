@@ -100,11 +100,14 @@ public class comprarVehiculoController implements Initializable {
         VBox box = new VBox();
         box.setAlignment(Pos.CENTER);
         box.setSpacing(5);
-        box.setPrefWidth(280);
+        box.setPrefWidth(260);
+        box.setSpacing(10);
+        box.setMinHeight(300);  // Altura mínima fija
+        box.setMaxHeight(350);
         box.setStyle("-fx-background-color: #2DFCD9; -fx-padding: 10; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 3);");
 
         ImageView image = new ImageView();
-        image.setFitHeight(146);
+        image.setFitHeight(150);
         image.setFitWidth(241);
         image.setPreserveRatio(true);
 
@@ -117,7 +120,6 @@ public class comprarVehiculoController implements Initializable {
             if (file.exists()) {
                 image.setImage(new Image(file.toURI().toString()));
             } else {
-                // If car image doesn't exist, try to load default image
                 String defaultImagePath = "C:\\Users\\Angel\\OneDrive\\Desktop\\Segundo Semestre\\Progra II\\Java\\ProyectoFinal\\Concesionario_Java_Proyect\\AtlantaFx-Template\\src\\main\\resources\\Imagenes\\default.png";
                 URL resourceUrl = getClass().getResource(defaultImagePath);
 

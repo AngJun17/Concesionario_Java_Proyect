@@ -1,0 +1,17 @@
+[
+  { "nombre": "Filtro de Aceite", "tipoVehiculo": "Carro", "precio": 60, "imagen": "filtro_aceite.jpg" },
+  { "nombre": "Bujías NGK", "tipoVehiculo": "Carro", "precio": 90, "imagen": "bujias_ngk.jpg" },
+  { "nombre": "Pastillas de Freno", "tipoVehiculo": "Carro", "precio": 120, "imagen": "pastillas_freno.jpg" },
+  { "nombre": "Amortiguadores", "tipoVehiculo": "Camioneta", "precio": 480, "imagen": "amortiguadores.jpg" },
+  { "nombre": "Aceite 10W40", "tipoVehiculo": "Carro", "precio": 130, "imagen": "aceite10w40.jpg" },
+  { "nombre": "Filtro de Aire", "tipoVehiculo": "Carro", "precio": 80, "imagen": "filtro_aire.jpg" },
+  { "nombre": "Batería Bosch", "tipoVehiculo": "Carro", "precio": 600, "imagen": "bateria_bosch.jpg" },
+  { "nombre": "Luz delantera LED", "tipoVehiculo": "Moto", "precio": 90, "imagen": "luz_led_moto.jpg" },
+  { "nombre": "Cadena para Moto", "tipoVehiculo": "Moto", "precio": 180, "imagen": "cadena_moto.jpg" },
+  { "nombre": "Filtro de Gasolina", "tipoVehiculo": "Carro", "precio": 70, "imagen": "filtro_gasolina.jpg" },
+  { "nombre": "Discos de Freno", "tipoVehiculo": "Carro", "precio": 250, "imagen": "discos_freno.jpg" },
+  { "nombre": "Correa de Distribución", "tipoVehiculo": "Carro", "precio": 200, "imagen": "correa_distribucion.jpg" },
+  { "nombre": "Radiador", "tipoVehiculo": "Camioneta", "precio": 850, "imagen": "radiador.jpg" },
+  { "nombre": "Espejo Retrovisor", "tipoVehiculo": "Carro", "precio": 110, "imagen": "espejo_retrovisor.jpg" },
+  { "nombre": "Llanta Michelin", "tipoVehiculo": "Carro", "precio": 700, "imagen": "llanta_michelin.jpg" }
+]

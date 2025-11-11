@@ -1,0 +1,17 @@
+[
+  { "nombre": "Cambio de Aceite", "tipoVehiculo": "Carro", "tipoServicio": "Aceite", "precio": 250, "imagen": "cambio_aceite.jpg" },
+  { "nombre": "Alineación y Balanceo", "tipoVehiculo": "Carro", "tipoServicio": "Mecánica", "precio": 180, "imagen": "alineacion.jpg" },
+  { "nombre": "Revisión de Frenos", "tipoVehiculo": "Carro", "tipoServicio": "Frenos", "precio": 220, "imagen": "revision_frenos.jpg" },
+  { "nombre": "Cambio de Bujías", "tipoVehiculo": "Carro", "tipoServicio": "Motor", "precio": 150, "imagen": "bujias.jpg" },
+  { "nombre": "Cambio de Filtro de Aire", "tipoVehiculo": "Carro", "tipoServicio": "Mecánica", "precio": 120, "imagen": "filtro_aire.jpg" },
+  { "nombre": "Limpieza de Inyectores", "tipoVehiculo": "Carro", "tipoServicio": "Motor", "precio": 300, "imagen": "inyectores.jpg" },
+  { "nombre": "Revisión de Suspensión", "tipoVehiculo": "Carro", "tipoServicio": "Mecánica", "precio": 350, "imagen": "suspension.jpg" },
+  { "nombre": "Cambio de Pastillas de Freno", "tipoVehiculo": "Moto", "tipoServicio": "Frenos", "precio": 120, "imagen": "pastillas_freno.jpg" },
+  { "nombre": "Cambio de Aceite", "tipoVehiculo": "Moto", "tipoServicio": "Aceite", "precio": 90, "imagen": "aceite_moto.jpg" },
+  { "nombre": "Revisión Eléctrica", "tipoVehiculo": "Moto", "tipoServicio": "Eléctrico", "precio": 150, "imagen": "revision_electrica.jpg" },
+  { "nombre": "Cambio de Amortiguadores", "tipoVehiculo": "Camioneta", "tipoServicio": "Mecánica", "precio": 500, "imagen": "amortiguadores.jpg" },
+  { "nombre": "Lavado Completo", "tipoVehiculo": "Carro", "tipoServicio": "Limpieza", "precio": 100, "imagen": "lavado.jpg" },
+  { "nombre": "Revisión General", "tipoVehiculo": "Camioneta", "tipoServicio": "Diagnóstico", "precio": 450, "imagen": "revision_general.jpg" },
+  { "nombre": "Cambio de Correa de Distribución", "tipoVehiculo": "Carro", "tipoServicio": "Motor", "precio": 600, "imagen": "correa.jpg" },
+  { "nombre": "Cambio de Batería", "tipoVehiculo": "Carro", "tipoServicio": "Eléctrico", "precio": 400, "imagen": "bateria.jpg" }
+]
