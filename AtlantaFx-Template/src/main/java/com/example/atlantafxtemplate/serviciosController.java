@@ -1,6 +1,8 @@
 package com.example.atlantafxtemplate;
 
+import com.example.atlantafxtemplate.Logica.CarritoManager;
 import com.example.atlantafxtemplate.Logica.ServiciosManager;
+import com.example.atlantafxtemplate.Modelo.CarritoItem;
 import com.example.atlantafxtemplate.Modelo.Servicios;
 import com.example.atlantafxtemplate.Modelo.Repuestos;
 import javafx.fxml.FXML;
@@ -39,6 +41,8 @@ public class serviciosController implements Initializable {
     private AnchorPane serviciosMainPane;
 
     private ServiciosManager manager;
+    // En serviciosController.java, donde creas el CarritoItem:
+    private CarritoManager carritoManager = CarritoManager.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -65,7 +69,6 @@ public class serviciosController implements Initializable {
         tipoServicioComboBox.setOnAction(e -> cargarItems());
     }
 
-    // ---- MÉTODO FXML ----
     @FXML
     private void limpiarComboBox(MouseEvent event) {
         tipoVehiculoComboBox.getSelectionModel().clearSelection();
@@ -120,7 +123,19 @@ public class serviciosController implements Initializable {
         Button btn = new Button("Comprar");
         btn.setStyle("-fx-background-color: #2DFCD9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;");
 
-        btn.setOnAction(e -> sceneChanger.cambiarEscena("carrito-view.fxml", e));
+        btn.setOnAction(e -> {
+            CarritoItem nuevoItem = new CarritoItem(
+                s.getNombre(),
+                s.getPrecio(),
+                s.getDescripcion(),
+                "",  // imagen (vacía para servicios)
+                "Servicio", // tipo
+                1  // cantidad inicial
+            );
+            carritoManager.agregarItem(nuevoItem);
+            sceneChanger.cambiarEscena("carrito-view.fxml", e);
+        });
+        
         box.getChildren().addAll(nombre, precio, desc, btn);
 
         return box;
@@ -154,8 +169,19 @@ public class serviciosController implements Initializable {
         Label desc = new Label(r.getDescripcion());
         Button btn = new Button("Comprar");
         btn.setStyle("-fx-background-color: #2DFCD9; -fx-text-fill: white; -fx-font-weight: bold;");
-        btn.setOnAction(e -> sceneChanger.cambiarEscena("carrito-view.fxml", e));
-
+        btn.setOnAction(e -> {
+            CarritoItem nuevoItem = new CarritoItem(
+                r.getNombre(),
+                r.getPrecio(),
+                r.getDescripcion(),
+                r.getImagen(),  // imagen del repuesto
+                "Repuesto", // tipo
+                1  // cantidad inicial
+            );
+            carritoManager.agregarItem(nuevoItem);
+            sceneChanger.cambiarEscena("carrito-view.fxml", e);
+        });
+        
         box.getChildren().addAll(image, nombre, precio, desc, btn);
         return box;
     }
