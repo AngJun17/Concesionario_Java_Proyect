@@ -112,7 +112,7 @@ public class comprarVehiculoController implements Initializable {
         box.setSpacing(10);
         box.setMinHeight(300);  // Altura mínima fija
         box.setMaxHeight(350);
-        box.setStyle("-fx-background-color: #2DFCD9; -fx-padding: 10; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 3);");
+        box.setStyle("-fx-background-color: #99deaf; -fx-padding: 10; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 3);");
 
         ImageView image = new ImageView();
         image.setFitHeight(150);
@@ -150,8 +150,8 @@ public class comprarVehiculoController implements Initializable {
         Label estado = new Label("Estado: " + carro.getEstado());
 
 
-        Button btn = new Button("Cotizar");
-        btn.setStyle("-fx-background-color: #36F5A4; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
+        Button btn = new Button("COTIZAR");
+        btn.setStyle("-fx-background-color: #4d9179; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
         btn.setOnAction(e -> {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("cotizador-view.fxml"));

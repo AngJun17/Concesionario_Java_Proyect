@@ -35,13 +35,13 @@
     -fx-transition: all 0.2s ease-in-out;
 }
 
-/* Hover: elevación y fondo suave */
+
 .jfx-button-green:hover {
     -fx-background-color: #b1db93;
     -fx-effect: dropshadow(gaussian, rgba(63,81,181,0.25), 8, 0.3, 0, 2);
 }
 
-/* Click: animación suave tipo ripple */
+
 .jfx-button-green:pressed {
     -fx-background-color: rgba(63,81,181,0.2);
     -fx-translate-y: 1;
@@ -66,13 +66,13 @@
     -fx-transition: all 0.2s ease-in-out;
 }
 
-/* Hover: elevación y fondo suave */
+
 .jfx-button-OC:hover {
     -fx-background-color: #5f9c86;
     -fx-effect: dropshadow(gaussian, rgba(63,81,181,0.25), 8, 0.3, 0, 2);
 }
 
-/* Click: animación suave tipo ripple */
+
 .jfx-button-OC:pressed {
     -fx-background-color: #a2ebd1;
     -fx-translate-y: 1;
@@ -96,13 +96,13 @@
     -fx-transition: all 0.2s ease-in-out;
 }
 
-/* Hover: elevación y fondo suave */
+
 .jfx-button-transparent :hover {
     -fx-background-color: transparent;
     -fx-effect: dropshadow(gaussian, rgba(63,81,181,0.25), 8, 0.3, 0, 2);
 }
 
-/* Click: animación suave tipo ripple */
+
 .jfx-button-transparent :pressed {
     -fx-background-color: rgba(63,81,181,0.2);
     -fx-translate-y: 1;
@@ -118,7 +118,7 @@
     -fx-background-color:  #13300b;
 }
 
-/* Sombras suaves tipo material */
+
 .jfoenix-alert {
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 4);
     -fx-padding: 10px;
@@ -161,13 +161,13 @@
 
 /* Scrollbar vertical */
 .scroll-pane .scroll-bar:vertical {
-    -fx-background-color: transparent; /* Fondo de la barra de scroll */
+    -fx-background-color: transparent;
 }
 
 .scroll-pane .scroll-bar:vertical .thumb {
-    -fx-background-color: #b1db93; /* Color de la "thumb" (la parte que se mueve) */
+    -fx-background-color: #b1db93;
     -fx-background-insets: 0;
-    -fx-background-radius: 6px; /* Redondear bordes */
+    -fx-background-radius: 6px;
 }
 
 .scroll-pane {
@@ -187,19 +187,19 @@
 
 /* Texto del prompt y del elemento seleccionado */
 .combo-box .list-cell {
-    -fx-text-fill: white;  /* Texto blanco arriba */
+    -fx-text-fill: white;
     -fx-background-color: transparent;
 }
 
 /* Ítems del menú desplegable */
 .combo-box-popup .list-view .list-cell {
-    -fx-text-fill: black;          /* Texto negro en el menú */
-    -fx-background-color: white;   /* Fondo blanco */
+    -fx-text-fill: black;
+    -fx-background-color: white;
 }
 
-/* Ítem cuando pasas el mouse encima */
+
 .combo-box-popup .list-view .list-cell:hover {
-    -fx-background-color: #e0e0e0; /* Gris claro al pasar el mouse */
+    -fx-background-color: #e0e0e0;
 }
 
 /* Flecha */
@@ -208,7 +208,6 @@
 }
 
 /*===Table===*/
-/* Quita el gradiente del encabezado y aplica color plano */
 .table-view .column-header-background {
     -fx-background-color: transparent;
 }
@@ -241,18 +240,18 @@
 
 /* --- FILAS --- */
 .table-row-cell {
-    -fx-background-color: #567a4b; /* Fondo de cada fila */
-    -fx-border-color: transparent;/* Quita los bordes entre filas */
+    -fx-background-color: #567a4b;
+    -fx-border-color: transparent;
 
 }
 
 /* --- CELDAS --- */
 .table-cell {
-    -fx-background-color: transparent; /* Quita el fondo gris */
-    -fx-text-fill: white;              /* 👈 texto visible (pon black si tu fondo es claro) */
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
 }
 
-/* --- HOVER Y SELECCIÓN (opcional, leve transparencia) --- */
+
 .table-row-cell:hover {
     -fx-background-color: rgba(255, 255, 255, 0.15);
 }
