@@ -3,8 +3,12 @@ package com.example.atlantafxtemplate;
 import com.example.atlantafxtemplate.Logica.VenderManager;
 import com.example.atlantafxtemplate.Modelo.Carro;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -14,11 +18,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import static java.lang.String.valueOf;
 
 public class comprarVehiculoController implements Initializable {
 
@@ -141,9 +149,27 @@ public class comprarVehiculoController implements Initializable {
         Label anio = new Label("Año: " + carro.getAnio());
         Label estado = new Label("Estado: " + carro.getEstado());
 
+
         Button btn = new Button("Cotizar");
         btn.setStyle("-fx-background-color: #36F5A4; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
-        btn.setOnAction(e -> sceneChanger.cambiarEscena("cotizador-view.fxml", e));
+        btn.setOnAction(e -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("cotizador-view.fxml"));
+                Parent root = loader.load();
+
+                // obtener el controlador  del FXML
+                cotizadorController cot = loader.getController();
+                cot.setDatos(carro.getPrecio());
+
+                // cambiar la escena
+                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
 
         box.getChildren().addAll(image, nombre, anio, estado, precio, btn);
         return box;
