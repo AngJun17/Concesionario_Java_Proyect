@@ -41,7 +41,7 @@ public class serviciosController implements Initializable {
     private AnchorPane serviciosMainPane;
 
     private ServiciosManager manager;
-    // En serviciosController.java, donde creas el CarritoItem:
+
     private CarritoManager carritoManager = CarritoManager.getInstance();
 
     @Override
@@ -49,19 +49,19 @@ public class serviciosController implements Initializable {
         sceneChanger.makeDraggable(serviciosMainPane);
         manager = new ServiciosManager();
 
-        // Configurar el FlowPane
+
         flowPaneServicios.setPrefWrapLength(850);
         flowPaneServicios.setMinHeight(200);
         flowPaneServicios.setPrefWidth(850);
         
-        // Permitir que el FlowPane crezca verticalmente
+
         flowPaneServicios.setMinHeight(Region.USE_PREF_SIZE);
         flowPaneServicios.setPrefHeight(Region.USE_COMPUTED_SIZE);
         flowPaneServicios.setMaxHeight(Double.MAX_VALUE);
         
         flowPaneServicios.setAlignment(javafx.geometry.Pos.CENTER);
 
-        // Rellenamos los combos
+
         tipoVehiculoComboBox.getItems().addAll("Carro", "Camioneta", "Moto");
         tipoServicioComboBox.getItems().addAll("Servicios", "Repuestos");
 
@@ -129,8 +129,8 @@ public class serviciosController implements Initializable {
                 s.getPrecio(),
                 s.getDescripcion(),
                 "",  // imagen (vacía para servicios)
-                "Servicio", // tipo
-                1  // cantidad inicial
+                "Servicio",
+                1
             );
             carritoManager.agregarItem(nuevoItem);
             sceneChanger.cambiarEscena("carrito-view.fxml", e);
@@ -175,8 +175,8 @@ public class serviciosController implements Initializable {
                 r.getPrecio(),
                 r.getDescripcion(),
                 r.getImagen(),  // imagen del repuesto
-                "Repuesto", // tipo
-                1  // cantidad inicial
+                "Repuesto",
+                1
             );
             carritoManager.agregarItem(nuevoItem);
             sceneChanger.cambiarEscena("carrito-view.fxml", e);
@@ -186,7 +186,6 @@ public class serviciosController implements Initializable {
         return box;
     }
 
-    // ---- MÉTODOS DE NAVEGACIÓN ----
     @FXML
     void carritoPresionado(MouseEvent event) { sceneChanger.cambiarEscena("carrito-view.fxml", event); }
 

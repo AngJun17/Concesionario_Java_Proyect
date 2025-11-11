@@ -98,11 +98,9 @@ public class carritoController implements Initializable {
         itemCard.setPadding(new Insets(10));
         itemCard.setStyle("-fx-background-color: #71a164; -fx-background-radius: 10;");
 
-        // Crear imagen si existe
         ImageView imageView = new ImageView();
         if (item.getImagen() != null && !item.getImagen().isEmpty()) {
             try {
-                // Cargar imagen desde resources
                 String ruta = "/com/example/atlantafxtemplate/Imagenes/" + item.getImagen();
                 URL imagenUrl = getClass().getResource(ruta);
 
@@ -110,10 +108,10 @@ public class carritoController implements Initializable {
                     Image image = new Image(imagenUrl.toExternalForm());
                     imageView.setImage(image);
                 } else {
-                    System.out.println("⚠️ Imagen no encontrada en resources: " + ruta);
+                    System.out.println("Imagen no encontrada en resources: " + ruta);
                 }
             } catch (Exception e) {
-                System.out.println("❌ Error al cargar la imagen: " + e.getMessage());
+                System.out.println("Error al cargar la imagen: " + e.getMessage());
             }
         }
 
@@ -147,8 +145,6 @@ public class carritoController implements Initializable {
         return itemCard;
     }
 
-
-    // ... otros campos y métodos existentes ...
 
     @FXML
     void comprarPresionado(MouseEvent event) {
