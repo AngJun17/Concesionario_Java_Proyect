@@ -1,0 +1,18 @@
+=================================
+           FACTURA              
+=================================
+Fecha: 11/11/2025 08:37:59
+
+DATOS DE FACTURACIÓN:
+Información: Emanuel de Jesus Vasquez 
+Método de pago: Tarjeta Bi
+Detalles de pago: Nit: 421705-2
+
+DETALLE DE PRODUCTOS:
+---------------------------------
+Cambio de Aceite x1 - Q250.00 c/u - Total: Q250.00
+Discos de Freno x1 - Q250.00 c/u - Total: Q250.00
+Aceite 10W40 x1 - Q130.00 c/u - Total: Q130.00
+---------------------------------
+TOTAL: Q630.00
+=================================

@@ -1,0 +1,16 @@
+=================================
+           FACTURA              
+=================================
+Fecha: 11/11/2025 08:58:23
+
+DATOS DE FACTURACIÓN:
+Información: adsfasdfa
+Método de pago: adsfasdfadsa
+Detalles de pago: adsfasdfasdfa
+
+DETALLE DE PRODUCTOS:
+---------------------------------
+Amortiguadores x1 - Q480.00 c/u - Total: Q480.00
+---------------------------------
+TOTAL: Q480.00
+=================================

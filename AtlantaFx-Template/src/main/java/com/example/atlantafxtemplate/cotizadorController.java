@@ -183,6 +183,8 @@ public class cotizadorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        InteresLbl.setEditable(false);
+        MontoLbl.setEditable(false);
         sceneChanger.makeDraggable(cotizadorMainPane);
         AnchorpaneTablaCot.setVisible(false);
         VBox1.setVisible(true);

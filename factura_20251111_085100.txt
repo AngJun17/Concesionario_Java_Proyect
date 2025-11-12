@@ -1,0 +1,18 @@
+=================================
+           FACTURA              
+=================================
+Fecha: 11/11/2025 08:51:00
+
+DATOS DE FACTURACIÓN:
+Información: Rodolfo Natareno
+Método de pago: Efectivo
+Detalles de pago: CF
+
+DETALLE DE PRODUCTOS:
+---------------------------------
+Discos de Freno x4 - Q250.00 c/u - Total: Q1000.00
+Lavado Completo x1 - Q100.00 c/u - Total: Q100.00
+Revisión de Frenos x1 - Q220.00 c/u - Total: Q220.00
+---------------------------------
+TOTAL: Q1320.00
+=================================

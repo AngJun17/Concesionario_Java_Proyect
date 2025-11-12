@@ -1,0 +1,17 @@
+=================================
+           FACTURA              
+=================================
+Fecha: 11/11/2025 19:55:48
+
+DATOS DE FACTURACIÓN:
+Información: dfghdfghdfgh
+Método de pago: dfghdfghdfg
+Detalles de pago: dgfhdfghdfg
+
+DETALLE DE PRODUCTOS:
+---------------------------------
+Revisión de Suspensión x1 - Q350.00 c/u - Total: Q350.00
+Llanta Michelin x4 - Q700.00 c/u - Total: Q2800.00
+---------------------------------
+TOTAL: Q3150.00
+=================================

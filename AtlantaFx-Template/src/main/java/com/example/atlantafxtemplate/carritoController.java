@@ -24,9 +24,20 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-
+// Agregar estos imports
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class carritoController implements Initializable {
+    // ... otros campos existentes ...
+    
+    @FXML
+    private TextArea textAreaFactura;
+
     @FXML
     private ScrollPane ScrollPaneCarrito;
     
@@ -62,6 +73,82 @@ public class carritoController implements Initializable {
     void botonComprarCarritoPressed(MouseEvent event) {
         AnchorPaneFactura.setVisible(true);
         ScrollPaneCarrito.setVisible(false);
+        // Limpiar el TextArea cuando se muestra el formulario
+        textAreaFactura.clear();
+    }
+
+    @FXML
+    private void confirmarPago(MouseEvent event) {
+        // Validar que los campos estén llenos
+        if (detallesDePagoTextField.getText().isEmpty() || 
+            InformeFacturacionTextField.getText().isEmpty() || 
+            MetododePagoTextField.getText().isEmpty()) {
+            
+            mostrarAlerta("Error", "Por favor complete todos los campos");
+            return;
+        }
+
+        generarFactura();
+
+        carritoManager.getItems().clear();
+        actualizarCarrito();
+
+        mostrarAlerta("Éxito", "La compra se ha realizado correctamente.\nLa factura ha sido generada.");
+
+        returnCarrito(event);
+    }
+
+    private void generarFactura() {
+        try {
+            LocalDateTime ahora = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+            String nombreArchivo = "factura_" + ahora.format(formatter) + ".txt";
+
+            StringBuilder facturaContent = new StringBuilder();
+
+            // Generar el contenido de la factura
+            facturaContent.append("=================================\n");
+            facturaContent.append("           FACTURA              \n");
+            facturaContent.append("=================================\n");
+            facturaContent.append("Fecha: ").append(ahora.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))).append("\n\n");
+            
+            facturaContent.append("DATOS DE FACTURACIÓN:\n");
+            facturaContent.append("Información: ").append(InformeFacturacionTextField.getText()).append("\n");
+            facturaContent.append("Método de pago: ").append(MetododePagoTextField.getText()).append("\n");
+            facturaContent.append("Detalles de pago: ").append(detallesDePagoTextField.getText()).append("\n\n");
+            
+            facturaContent.append("DETALLE DE PRODUCTOS:\n");
+            facturaContent.append("---------------------------------\n");
+            for (CarritoItem item : carritoManager.getItems()) {
+                facturaContent.append(String.format("%s x%d - Q%.2f c/u - Total: Q%.2f%n",
+                        item.getNombre(),
+                        item.getCantidad(),
+                        item.getPrecio(),
+                        item.getPrecio() * item.getCantidad()));
+            }
+            facturaContent.append("---------------------------------\n");
+            facturaContent.append(String.format("TOTAL: Q%.2f%n", carritoManager.calcularTotal()));
+            facturaContent.append("=================================\n");
+
+            // Mostrar en el TextArea
+            textAreaFactura.setText(facturaContent.toString());
+
+            // Guardar en archivo
+            try (PrintWriter writer = new PrintWriter(new FileWriter(nombreArchivo))) {
+                writer.print(facturaContent.toString());
+            }
+
+        } catch (Exception e) {
+            mostrarAlerta("Error", "Error al generar la factura: " + e.getMessage());
+        }
+    }
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 
     @FXML
@@ -69,6 +156,7 @@ public class carritoController implements Initializable {
         detallesDePagoTextField.setText("");
         InformeFacturacionTextField.setText("");
         MetododePagoTextField.setText("");
+        textAreaFactura.clear(); // Limpiar el TextArea
         AnchorPaneFactura.setVisible(false);
         ScrollPaneCarrito.setVisible(true);
     }

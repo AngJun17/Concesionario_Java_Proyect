@@ -1,0 +1,16 @@
+=================================
+           FACTURA              
+=================================
+Fecha: 11/11/2025 08:10:24
+
+DATOS DE FACTURACIÓN:
+Información: Junior Angello Tax Garcia
+Método de pago: Efectivo
+Detalles de pago: Nit:34857211-07
+
+DETALLE DE PRODUCTOS:
+---------------------------------
+Cambio de Aceite x3 - Q250.00 c/u - Total: Q750.00
+---------------------------------
+TOTAL: Q750.00
+=================================

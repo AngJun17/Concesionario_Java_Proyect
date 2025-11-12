@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="carritoMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1031.0" style="-fx-background-color: #4a6c40;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atlantafxtemplate.carritoController">
+<AnchorPane fx:id="carritoMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1031.0" style="-fx-background-color: #4a6c40;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atlantafxtemplate.carritoController">
     <children>
       <Button fx:id="BotonComprarCarrito" layoutX="696.0" layoutY="544.0" mnemonicParsing="false" onMouseClicked="#botonComprarCarritoPressed" prefHeight="32.0" prefWidth="251.0" styleClass="jfx-button-green" text="COMPRAR" textFill="WHITE" />
         <AnchorPane layoutX="-6.0" prefHeight="54.0" prefWidth="1043.0" style="-fx-background-color: #13300b;">
@@ -73,24 +67,21 @@
                   <TextField fx:id="detallesDePagoTextField" layoutX="10.0" layoutY="136.0" />
                </children>
             </VBox>
-            <Button layoutX="622.0" layoutY="451.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="299.0" styleClass="jfx-button-green" text="CONFIRMAR PAGO" />
+            <!-- Modificar el botón de confirmar pago -->
+<Button layoutX="622.0" layoutY="451.0" mnemonicParsing="false" onMouseClicked="#confirmarPago" prefHeight="39.0" prefWidth="299.0" styleClass="jfx-button-green" text="CONFIRMAR PAGO" />
             <Label fx:id="returnCarrito" layoutX="51.0" layoutY="-24.0" onMouseClicked="#returnCarrito" prefHeight="136.0" prefWidth="103.0" text="←" textFill="WHITE">
                <font>
                   <Font size="63.0" />
                </font>
             </Label>
+            <TextArea fx:id="textAreaFactura" editable="false" layoutX="600.0" layoutY="87.0" prefHeight="342.0" prefWidth="339.0" />
          </children>
       </AnchorPane>
-        <ScrollPane fx:id="ScrollPaneCarrito" layoutX="68.0" layoutY="148.0"
-                    prefHeight="371.0" prefWidth="892.0"
-                    fitToWidth="true" hbarPolicy="NEVER"
-                    style="-fx-background-color: #4a6c40;">
+        <ScrollPane fx:id="ScrollPaneCarrito" fitToWidth="true" hbarPolicy="NEVER" layoutX="68.0" layoutY="148.0" prefHeight="371.0" prefWidth="892.0" style="-fx-background-color: #4a6c40;">
             <content>
-                <VBox fx:id="carritoItemsContainer" spacing="10"
-                      style="-fx-background-color: #4a6c40;"
-                      alignment="TOP_CENTER">
+                <VBox fx:id="carritoItemsContainer" alignment="TOP_CENTER" spacing="10" style="-fx-background-color: #4a6c40;">
                     <padding>
-                        <Insets top="10" right="10" bottom="10" left="10"/>
+                        <Insets bottom="10" left="10" right="10" top="10" />
                     </padding>
                 </VBox>
             </content>

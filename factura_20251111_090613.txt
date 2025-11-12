@@ -1,0 +1,16 @@
+=================================
+           FACTURA              
+=================================
+Fecha: 11/11/2025 09:06:13
+
+DATOS DE FACTURACIÓN:
+Información: Junior
+Método de pago: Efectivo
+Detalles de pago: Cf
+
+DETALLE DE PRODUCTOS:
+---------------------------------
+Cambio de Aceite x2 - Q250.00 c/u - Total: Q500.00
+---------------------------------
+TOTAL: Q500.00
+=================================
